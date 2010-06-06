@@ -31,6 +31,14 @@ end
 
 * sudo gem install expires_at
 
+= Rails
+
+* In RAILS_ROOT/config/environment.rb:
+
+config.after_initialize do
+  include ExpiresAt
+end
+
 == LICENSE:
 
 (The MIT License)
