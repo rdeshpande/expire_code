@@ -1,14 +1,12 @@
-expires_at
-    by Rohan Deshpande
-    http://github.com/rdeshpande
+= {expires_at}[http://github.com/rdeshpande]
 
 == DESCRIPTION:
 
 expires_at aims to help large development teams manage temporary code. No longer should you have to write:
 
-# NOTE: Remove after 3/10!!!!
-def some_code
-...
+  # NOTE: Remove after 3/10!!!!
+  def some_code
+  ...
 
 Instead, use expires_at to fail your build if dead code still exists in the codebase, and/or have it warn you in production if the code isn't covered by tests (yet).
 
@@ -19,9 +17,9 @@ Instead, use expires_at to fail your build if dead code still exists in the code
 
 == SYNOPSIS:
 
-expires_at Time.parse('2009-01-01') do
-  temporary_code
-end
+  expires_at Time.parse('2009-01-01') do
+    temporary_code
+  end
 
 == REQUIREMENTS:
 
@@ -29,15 +27,15 @@ end
 
 == INSTALL:
 
-* sudo gem install expires_at
+  sudo gem install expires_at
 
-= Rails
+=== Rails
 
-* In RAILS_ROOT/config/environment.rb:
+In RAILS_ROOT/config/environment.rb, include:
 
-config.after_initialize do
-  include ExpiresAt
-end
+  config.after_initialize do
+    include ExpiresAt
+  end
 
 == LICENSE:
 
