@@ -1,6 +1,6 @@
 
 require File.join(File.dirname(__FILE__), %w[spec_helper])
 
-describe ExpiresAt do
+describe ExpiresCode do
 end
 

@@ -1,4 +1,6 @@
-module Expires
+module ExpireCode
+
+  NUM_STACKTRACE_LINES = 10
 
   def self.formatted_exception(time, offending_line)
     "[#{Time.now}] [EXPIRED CODE]: #{offending_line}"
@@ -7,8 +9,8 @@ module Expires
   def self.alert(message)
     if defined?(Rails)
       case Rails.env
-      when /production|development/ then logger.warn(message) if defined?(logger)
-      when 'test' then raise message
+      when /test|development/ then raise message
+      else logger.warn(message) if defined?(logger)
       end
     else
       raise message
@@ -23,8 +25,8 @@ module Expires
     if !condition
       yield
     else
-      message = ExpiresAt.formatted_exception(condition, caller[1])
-      ExpiresAt.alert(message)
+      message = ExpireCode.formatted_exception(condition, caller[1..NUM_STACKTRACE_LINES].join("\n"))
+      ExpireCode.alert(message)
       yield
     end
   end
