@@ -1,6 +1,6 @@
 
 requir File.expand_path(
-    File.join(File.dirname(__FILE__), %w[.. lib expirecode]))
+    File.join(File.dirname(__FILE__), %w[.. lib expire_code]))
 
 Spec::Runner.configure do |config|
   # == Mock Framework

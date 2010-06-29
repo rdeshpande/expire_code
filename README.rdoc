@@ -1,4 +1,4 @@
-= {expirecode}[http://github.com/rdeshpande]
+= {expire_code}[http://github.com/rdeshpande]
 
 == DESCRIPTION:
 
@@ -8,7 +8,7 @@ expires aims to help large development teams manage temporary code. No longer sh
   def some_code
   ...
 
-Instead, use expirecode to fail your build if dead code still exists in the codebase, and/or have it warn you in production if the code isn't covered by tests (yet).
+Instead, use expire_code to fail your build if dead code still exists in the codebase, and/or have it warn you in production if the code isn't covered by tests (yet).
 
 == FEATURES/PROBLEMS:
 
@@ -31,7 +31,7 @@ Instead, use expirecode to fail your build if dead code still exists in the code
 
 == INSTALL:
 
-  sudo gem install expirecode
+  sudo gem install expire_code
 
 === Rails
 
