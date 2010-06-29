@@ -1,14 +1,14 @@
-= {expires_at}[http://github.com/rdeshpande]
+= {expirecode}[http://github.com/rdeshpande]
 
 == DESCRIPTION:
 
-expires_at aims to help large development teams manage temporary code. No longer should you have to write:
+expires aims to help large development teams manage temporary code. No longer should you have to write:
 
   # NOTE: Remove after 3/10!!!!
   def some_code
   ...
 
-Instead, use expires_at to fail your build if dead code still exists in the codebase, and/or have it warn you in production if the code isn't covered by tests (yet).
+Instead, use expirecode to fail your build if dead code still exists in the codebase, and/or have it warn you in production if the code isn't covered by tests (yet).
 
 == FEATURES/PROBLEMS:
 
@@ -21,20 +21,24 @@ Instead, use expires_at to fail your build if dead code still exists in the code
     temporary_code
   end
 
+  expires_when users_are_migrated do
+    temporary_code
+  end
+
 == REQUIREMENTS:
 
 * None.
 
 == INSTALL:
 
-  sudo gem install expires_at
+  sudo gem install expirecode
 
 === Rails
 
 In RAILS_ROOT/config/environment.rb, include:
 
   config.after_initialize do
-    include ExpiresAt
+    include ExpireCode
   end
 
 == LICENSE:

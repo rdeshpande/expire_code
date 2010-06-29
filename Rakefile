@@ -9,8 +9,8 @@ task :default => 'test:run'
 task 'gem:release' => 'test:run'
 
 Bones {
-  name  'expires_at'
+  name  'expirecode'
   authors  'Rohan Deshpande'
   email    'rohan.deshpande@gmail.com'
-  url      'github.com/rdeshpande/expires_at'
+  url      'github.com/rdeshpande/expirecode'
 }

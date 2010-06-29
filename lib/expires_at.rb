@@ -1,7 +1,7 @@
-module ExpiresAt
+module Expires
 
   def self.formatted_exception(time, offending_line)
-    "[EXPIRED CODE AS OF #{time.to_s}]: #{offending_line}"
+    "[#{Time.now}] [EXPIRED CODE]: #{offending_line}"
   end
 
   def self.alert(message)
@@ -16,10 +16,14 @@ module ExpiresAt
   end
 
   def expires_at(time, &block)
-    if Time.now < time
+    expires_when(Time.now >= time, &block)
+  end
+
+  def expires_when(condition, &block)
+    if !condition
       yield
     else
-      message = ExpiresAt.formatted_exception(time, caller.first)
+      message = ExpiresAt.formatted_exception(condition, caller[1])
       ExpiresAt.alert(message)
       yield
     end
